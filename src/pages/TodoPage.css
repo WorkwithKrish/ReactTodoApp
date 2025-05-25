@@ -1,0 +1,125 @@
+/* Container for the whole page */
+.todoPageContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family:  sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.todoPageContainer h1 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Input section */
+.todoInputWrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todoInputWrapper input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.todoInputWrapper button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todoInputWrapper button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Todo list styles */
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.todoItem:hover {
+  background-color: #f1f3f5;
+}
+
+.checkBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkBox input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.checkBox label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkBox input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+/* Action buttons */
+.todoActions button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.todoActions button:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .todoInputWrapper {
+    flex-direction: column;
+  }
+
+  .todoInputWrapper button {
+    width: 100%;
+  }
+
+  .todoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .todoActions {
+    align-self: flex-end;
+  }
+}
